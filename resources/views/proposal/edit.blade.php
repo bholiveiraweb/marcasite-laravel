@@ -16,14 +16,14 @@
                         </div>
                     @endif
                     
-                    <form method="POST" action="{{ route('proposal.update', ['id' => $proposal->id]) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('proposal.update', ['id' => $proposal->id]) }}" enctype="multipart/form-data" autocomplete="off">
                         @csrf
                         <div class="form-group row">
                             <label for="autocomplete" class="col-md-4 col-form-label text-md-right">{{ __('Cliente') }}</label>
 
                             <div class="col-md-6">
-                                <input id="autocomplete" type="text" class="form-control" name="autocomplete" value="{{ $proposal->company_name }}" required autocomplete="off">
-                                <input id="customer_id" type="hidden" name="customer_id" value="{{ $proposal->customer_id }}" autocomplete="off">
+                                <input id="autocomplete" type="text" class="form-control" name="autocomplete" value="{{ $proposal->company_name }}" required>
+                                <input id="customer_id" type="hidden" name="customer_id" value="{{ $proposal->customer_id }}">
 
                                 <div id="suggests-container">
                                     <ul id="autocomplete-suggests" class="list-group"></ul>
@@ -40,7 +40,7 @@
                             <label for="constructions_address" class="col-md-4 col-form-label text-md-right">{{ __('Endereço da Obra') }}</label>
 
                             <div class="col-md-6">
-                                <input id="constructions_address" type="text" class="form-control @error('constructions_address') is-invalid @enderror" name="constructions_address" value="{{ $proposal->constructions_address }}" required autocomplete="constructions_address">
+                                <input id="constructions_address" type="text" class="form-control @error('constructions_address') is-invalid @enderror" name="constructions_address" value="{{ $proposal->constructions_address }}" required>
 
                                 @error('constructions_address')
                                     <span class="invalid-feedback" role="alert">
@@ -53,7 +53,7 @@
                             <label for="proposal_total" class="col-md-4 col-form-label text-md-right">{{ __('Valor Total') }}</label>
 
                             <div class="col-md-6">
-                                <input id="proposal_total" type="text" class="form-control @error('proposal_total') is-invalid @enderror" name="proposal_total" value="{{ $proposal->proposal_total }}" required autocomplete="proposal_total">
+                                <input id="proposal_total" type="text" class="form-control @error('proposal_total') is-invalid @enderror" name="proposal_total" value="{{ $proposal->proposal_total }}" required>
 
                                 @error('proposal_total')
                                     <span class="invalid-feedback" role="alert">
@@ -66,7 +66,7 @@
                             <label for="entry_amount" class="col-md-4 col-form-label text-md-right">{{ __('Sinal') }}</label>
 
                             <div class="col-md-6">
-                                <input id="entry_amount" type="text" class="form-control @error('entry_amount') is-invalid @enderror" name="entry_amount" value="{{ $proposal->entry_amount }}" required autocomplete="entry_amount">
+                                <input id="entry_amount" type="text" class="form-control @error('entry_amount') is-invalid @enderror" name="entry_amount" value="{{ $proposal->entry_amount }}" required>
 
                                 @error('entry_amount')
                                     <span class="invalid-feedback" role="alert">
@@ -79,7 +79,7 @@
                             <label for="installment_qty" class="col-md-4 col-form-label text-md-right">{{ __('Quantidade de Parcelas') }}</label>
 
                             <div class="col-md-6">
-                                <input id="installment_qty" type="text" class="form-control @error('installment_qty') is-invalid @enderror" name="installment_qty" value="{{ $proposal->installment_qty }}" required autocomplete="installment_qty">
+                                <input id="installment_qty" type="text" class="form-control @error('installment_qty') is-invalid @enderror" name="installment_qty" value="{{ $proposal->installment_qty }}" required>
 
                                 @error('installment_qty')
                                     <span class="invalid-feedback" role="alert">
@@ -92,7 +92,7 @@
                             <label for="installment_amount" class="col-md-4 col-form-label text-md-right">{{ __('Valor das Parcelas') }}</label>
 
                             <div class="col-md-6">
-                                <input id="installment_amount" type="text" class="form-control @error('installment_amount') is-invalid @enderror" name="installment_amount" value="{{ $proposal->installment_amount }}" required autocomplete="installment_amount">
+                                <input id="installment_amount" type="text" class="form-control @error('installment_amount') is-invalid @enderror" name="installment_amount" value="{{ $proposal->installment_amount }}" required>
 
                                 @error('installment_amount')
                                     <span class="invalid-feedback" role="alert">
@@ -105,7 +105,7 @@
                             <label for="payment_starts" class="col-md-4 col-form-label text-md-right">{{ __('Início do Pagamento') }}</label>
 
                             <div class="col-md-6">
-                                <input id="payment_starts" type="date" class="form-control @error('payment_starts') is-invalid @enderror" name="payment_starts" value="{{ $proposal->payment_starts }}" required autocomplete="payment_starts">
+                                <input id="payment_starts" type="date" class="form-control @error('payment_starts') is-invalid @enderror" name="payment_starts" value="{{ $proposal->payment_starts }}" required>
 
                                 @error('payment_starts')
                                     <span class="invalid-feedback" role="alert">
@@ -118,7 +118,7 @@
                             <label for="installment_date" class="col-md-4 col-form-label text-md-right">{{ __('Data das Parcelas') }}</label>
 
                             <div class="col-md-6">
-                                <input id="installment_date" type="text" class="form-control @error('installment_date') is-invalid @enderror" name="installment_date" value="{{ $proposal->installment_date }}" required autocomplete="installment_date">
+                                <input id="installment_date" type="text" class="form-control @error('installment_date') is-invalid @enderror" name="installment_date" value="{{ $proposal->installment_date }}" required>
 
                                 @error('installment_date')
                                     <span class="invalid-feedback" role="alert">

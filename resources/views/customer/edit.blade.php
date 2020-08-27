@@ -15,13 +15,13 @@
                             </button>
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('customer.update', ['id' => $customer->id]) }}">
+                    <form method="POST" action="{{ route('customer.update', ['id' => $customer->id]) }}" autocomplete="off">
                         @csrf
                         <div class="form-group row">
                             <label for="company_name" class="col-md-4 col-form-label text-md-right">{{ __('Razão Social') }}</label>
 
                             <div class="col-md-6">
-                                <input id="company_name" type="text" class="form-control @error('company_name') is-invalid @enderror" name="company_name" value="{{ $customer->company_name }}" required autocomplete="company_name" autofocus>
+                                <input id="company_name" type="text" class="form-control @error('company_name') is-invalid @enderror" name="company_name" value="{{ $customer->company_name }}" required>
 
                                 @error('company_name')
                                     <span class="invalid-feedback" role="alert">
@@ -34,7 +34,7 @@
                             <label for="trading_name" class="col-md-4 col-form-label text-md-right">{{ __('Nome Fantasia') }}</label>
 
                             <div class="col-md-6">
-                                <input id="trading_name" type="text" class="form-control @error('trading_name') is-invalid @enderror" name="trading_name" value="{{ $customer->trading_name }}" required autocomplete="trading_name">
+                                <input id="trading_name" type="text" class="form-control @error('trading_name') is-invalid @enderror" name="trading_name" value="{{ $customer->trading_name }}" required>
 
                                 @error('trading_name')
                                     <span class="invalid-feedback" role="alert">
@@ -47,7 +47,7 @@
                             <label for="registered_number" class="col-md-4 col-form-label text-md-right">{{ __('CNPJ') }}</label>
 
                             <div class="col-md-6">
-                                <input id="registered_number" type="text" class="form-control @error('registered_number') is-invalid @enderror" name="registered_number" value="{{ $customer->registered_number }}" required autocomplete="registered_number">
+                                <input id="registered_number" type="text" class="form-control @error('registered_number') is-invalid @enderror" name="registered_number" value="{{ $customer->registered_number }}" required>
 
                                 @error('registered_number')
                                     <span class="invalid-feedback" role="alert">
@@ -60,7 +60,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Endereço') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ $customer->address }}" required autocomplete="address">
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ $customer->address }}" required>
 
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
@@ -73,7 +73,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $customer->email }}" required autocomplete="email">
+                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $customer->email }}" required>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -86,7 +86,7 @@
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Telefone') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ $customer->phone }}" autocomplete="phone">
+                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ $customer->phone }}">
 
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
@@ -99,7 +99,7 @@
                             <label for="official" class="col-md-4 col-form-label text-md-right">{{ __('Nome do Responsável') }}</label>
 
                             <div class="col-md-6">
-                                <input id="official" type="text" class="form-control @error('official') is-invalid @enderror" name="official" value="{{ $customer->official }}" required autocomplete="official">
+                                <input id="official" type="text" class="form-control @error('official') is-invalid @enderror" name="official" value="{{ $customer->official }}" required>
 
                                 @error('official')
                                     <span class="invalid-feedback" role="alert">
@@ -112,7 +112,7 @@
                             <label for="official_document" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
 
                             <div class="col-md-6">
-                                <input id="official_document" type="text" class="form-control @error('official_document') is-invalid @enderror" name="official_document" value="{{ $customer->official_document }}" required autocomplete="official_document">
+                                <input id="official_document" type="text" class="form-control @error('official_document') is-invalid @enderror" name="official_document" value="{{ $customer->official_document }}" required>
 
                                 @error('official_document')
                                     <span class="invalid-feedback" role="alert">
@@ -125,7 +125,7 @@
                             <label for="celphone" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
 
                             <div class="col-md-6">
-                                <input id="celphone" type="text" class="form-control @error('celphone') is-invalid @enderror" name="celphone" value="{{ $customer->celphone }}" required autocomplete="celphone">
+                                <input id="celphone" type="text" class="form-control @error('celphone') is-invalid @enderror" name="celphone" value="{{ $customer->celphone }}" required>
 
                                 @error('celphone')
                                     <span class="invalid-feedback" role="alert">
