@@ -1,0 +1,89 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
+html,
+body {
+    min-height: 100vh;
+}
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+
+#wrapper {
+    overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.55rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+#suggests-container {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: calc(100% - 1.9rem);
+    background: #fff;
+    border: 1px solid #d1d3e2;
+}
+
+#suggests-container.active {
+    display: inherit;
+}
+
+#autocomplete-suggests, #autocomplete-suggests li {
+    list-style: none;
+}
+
+#autocomplete-suggests li {
+    padding: .5rem;
+}
+
+#autocomplete-suggests li:hover {
+    cursor: pointer;
+    color: $blue;
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
