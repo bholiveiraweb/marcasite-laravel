@@ -50,8 +50,11 @@ class ProposalController extends Controller
 
     public function edit($id)
     {
-        $data = ['proposal' => Proposal::where('proposals.id', $id)->join('customers', 'customers.id', '=', 'proposals.customer_id')->first(['proposals.*', 'customers.company_name'])];
-        return view('proposal.edit', $data);
+        $proposal = Proposal::where('proposals.id', $id)
+                        ->join('customers', 'customers.id', '=', 'proposals.customer_id')
+                        ->first(['proposals.*', 'customers.company_name']);
+        
+        return view('proposal.edit', ['proposal' => $proposal']);
     }
 
     public function store(Request $request)
